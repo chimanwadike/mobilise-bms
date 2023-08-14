@@ -43,20 +43,4 @@ public class Verifier {
             }
         }
     }
-
-    public boolean verifyEmail(String param) throws GeneralAppException {
-        if (param == null || param.isEmpty()) {
-            exceptionThrower.throwNullParameterException(resourceUrl);
-        }
-
-        var regexPattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/i";
-
-        return patternMatches(param, regexPattern);
-    }
-
-    public static boolean patternMatches(String emailAddress, String regexPattern) {
-        return Pattern.compile(regexPattern)
-                .matcher(emailAddress)
-                .matches();
-    }
 }

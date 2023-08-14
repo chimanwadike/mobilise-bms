@@ -1,6 +1,5 @@
 package com.mobilise.bms.service;
 
-import com.mobilise.bms.dto.AuthorDTO;
 import com.mobilise.bms.dto.GenreDTO;
 import com.mobilise.bms.exception.ExceptionThrower;
 import com.mobilise.bms.model.Genre;

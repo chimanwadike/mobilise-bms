@@ -1,9 +1,6 @@
 package com.mobilise.bms.model;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
