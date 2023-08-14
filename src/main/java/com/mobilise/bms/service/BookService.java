@@ -181,8 +181,14 @@ public class BookService {
     BookDTO mapBookDTO(Book book){
         BookDTO bookDTO = modelMapper.map(book, BookDTO.class);
         // Set author and genre IDS
-        bookDTO.setAuthorIds(book.getAuthors().stream().map(Author::getId).collect(Collectors.toList()));
-        bookDTO.setGenreIds(book.getGenres().stream().map(Genre::getId).collect(Collectors.toList()));
+        if (book.getAuthors() != null){
+            bookDTO.setAuthorIds(book.getAuthors().stream().map(Author::getId).collect(Collectors.toList()));
+        }
+
+        if (book.getGenres() != null){
+            bookDTO.setGenreIds(book.getGenres().stream().map(Genre::getId).collect(Collectors.toList()));
+        }
+
         return bookDTO;
     }
 
