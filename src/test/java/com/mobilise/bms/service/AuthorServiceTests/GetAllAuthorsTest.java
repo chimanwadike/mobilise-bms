@@ -35,9 +35,9 @@ public class GetAllAuthorsTest {
     private AuthorService authorService;
 
     @Test
-    public void testGetAllBooks_ReturnsListOfBooks(){
+    public void testGetAllAuthors_ReturnsListOfBooks(){
         // Create a pageable object for testing
-        Pageable pageable = PageRequest.of(0, 10, Sort.by("title"));
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("id"));
 
         Page<Author> authorPage = new PageImpl<>(TestDataUtil.createSampleAuthors());
 
@@ -57,9 +57,9 @@ public class GetAllAuthorsTest {
     }
 
     @Test
-    public void testGetAllBooks_ReturnsEmptyList(){
+    public void testGetAllAuthors_ReturnsEmptyList(){
         // Create a pageable object for testing
-        Pageable pageable = PageRequest.of(0, 10, Sort.by("title"));
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("id"));
 
         Page<Author> authorPage = new PageImpl<>(Collections.emptyList());
 
